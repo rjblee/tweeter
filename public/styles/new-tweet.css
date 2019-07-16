@@ -1,0 +1,25 @@
+.counter {
+  font-family: 'Bungee', cursive;
+  float: right;
+}
+
+input[type="submit"] {
+  background: #4056A1;
+  color: #fff;
+  font-family: 'Bungee', cursive;
+}
+
+.tweetBox {
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* margin-left: 50px; */
+  background: transparent;
+  border-color: transparent;
+  border-bottom: solid;
+  border-bottom-color: #4056A1;
+  outline: none;
+  height: 40px;
+}
+

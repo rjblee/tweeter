@@ -1,0 +1,30 @@
+nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.5em;
+  height: 120px;
+  background: #4056A1;
+  z-index: 1000;
+}
+
+nav h1, 
+nav h3 {
+  margin: 0;
+  color: #fff;
+}
+
+nav h1 {
+  font-family: 'Bungee', cursive;
+}
+
+nav h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+}
+
+nav h3 b {
+  font-weight: bold;  
+}

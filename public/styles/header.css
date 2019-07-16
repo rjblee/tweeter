@@ -1,0 +1,30 @@
+header {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  background-color: rgb(197, 197, 212);
+  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+  margin-top: 120px;
+}
+
+.avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: -20px;
+  text-align: center;
+}
+
+header h2 b {
+  font-weight: lighter;  
+}

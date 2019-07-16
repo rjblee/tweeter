@@ -18,8 +18,23 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .container {
+   margin-top: 60px;
+ }  
+
+ main {
+   color: black;
+   background-color: #f4f1ec;
+   /* background-color: goldenrod; */
+   width: 90%;
+   left: 0;
+   right: 0;
+   margin: auto;
+ }
