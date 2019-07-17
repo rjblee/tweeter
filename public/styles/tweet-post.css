@@ -1,0 +1,43 @@
+.tweetHeader p {
+  float: left
+}
+
+.username {
+  float: right;
+  vertical-align: bottom;
+}
+
+.avatarAndName {
+  display: inline-block;
+}
+
+.avatarAndName span {
+  vertical-align: top;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+article {
+  border-style: solid;
+  border-color: #4056A1;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.tweetFooter{
+  border-top: 0px;
+}
+
+.tweetFooter p {
+  display: inline-block;
+  font-size: 0.7em;
+}
+
+.icons {
+  float: right;
+  padding-top: 20px;
+}
+
+.tweetPost:hover {
+  box-shadow: 10px 10px rgb(197, 197, 212);
+}
