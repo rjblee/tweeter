@@ -45,35 +45,45 @@ $(() => {
     return $article;
   }
 
-  $( "#tweetButton" ).submit(function( event ) {
-    alert( "Handler for .submit() called." );
+  $("#tweetButton").submit(function(event) {
     event.preventDefault();
+    if (remainingChar === 140) {
+      alert("Error: Tweet content is not present.")
+    } else if (remainingChar < -1) {
+      alert("Error: Tweet content is too long.")
+    } else {
+      $.post('/tweets', $(this).serialize(), (data, status) => {
+      })
+    }
+
+
+    console.log($(this).serialize());
   });
 
-  const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" 
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+  // const tweetData = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png",
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd" 
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ]
   
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
@@ -82,5 +92,13 @@ $(() => {
     }
   };
 
-  renderTweets(tweetData);
+  const loadTweets = function() {
+    $.get('/tweets', function(data) {
+      renderTweets(data);
+    })
+  }
+
+  loadTweets();
+
+
 });
