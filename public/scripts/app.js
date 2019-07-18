@@ -8,7 +8,7 @@ $(() => {
     const $div1 = $("<div>").addClass("avatarAndName");
     $header.append($div1);
   
-    const $img1 = $("<img>").attr(obj.user.avatars);
+    const $img1 = $("<img>").attr("src", obj.user.avatars);
     $div1.append($img1);
 
     const $span1 = $("<span>").text(obj.user.name);
@@ -44,7 +44,12 @@ $(() => {
   
     return $article;
   }
-  
+
+  $( "#tweetButton" ).submit(function( event ) {
+    alert( "Handler for .submit() called." );
+    event.preventDefault();
+  });
+
   const tweetData = [
     {
       "user": {
