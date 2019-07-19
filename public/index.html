@@ -28,7 +28,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <h1>TWEETER</h1>
-      <h3><b>Write</b> a new tweet</h3>
+      <div>
+        <h3><b>Write</b> a new tweet</h3>
+        <img id="arrowDown" src="https://img.icons8.com/android/50/000000/expand-arrow.png">
+      </div>
     </nav>
 
     <header class="mainHeader">
@@ -44,8 +47,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
+        <div id="errorMessage">
+          Error: Tweet content is not present
+        </div>
+        <form id="tweetButton" method="POST" action="/tweets/">
           <textarea class="tweetBox" name="text" placeholder="What are you humming about?"></textarea>
           <div>
             <input type="submit" value="Tweet">
