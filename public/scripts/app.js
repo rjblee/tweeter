@@ -45,14 +45,21 @@ $(() => {
     return $article;
   };
 
-  
+  $("#errorMessage").hide();
+
   $("#tweetButton").submit(function(event) {
     event.preventDefault();
 
+    $("#errorMessage").hide();
+
     if ($(".tweetBox").val().length === 0) {
-      alert("Error: Tweet content is not present.");
+      $("#errorMessage").html("Error: Tweet content is not present")
+      $("#errorMessage").slideDown("slow");
+
     } else if ($(".tweetBox").val().length > 140) {
-      alert("Error: Tweet content is too long.");
+      $("#errorMessage").html("Error: Tweet content is too long")
+      $("#errorMessage").slideDown("slow");
+
     } else {
       $.post('/tweets', $(this).serialize(), (data, status) => {
         $(".tweetBox").val("");
@@ -80,6 +87,9 @@ $(() => {
   
   loadTweets();
   
+  $('#arrowDown').click(function() {
+    $('#tweetButton').slideToggle();
+  });
 });
 
 
