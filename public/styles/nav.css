@@ -9,6 +9,9 @@ nav {
   background: #4056A1;
   z-index: 1000;
 }
+nav div{
+  text-align: center;
+}
 
 nav h1, 
 nav h3 {
@@ -27,4 +30,10 @@ nav h3 {
 
 nav h3 b {
   font-weight: bold;  
+}
+
+#arrowDown:hover{
+  color: white;
+  position: relative;
+  top: 5px;
 }
