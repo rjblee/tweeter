@@ -43,24 +43,48 @@ $(() => {
 
   
     return $article;
-  }
+  };
 
+  
   $("#tweetButton").submit(function(event) {
     event.preventDefault();
-    if (remainingChar === 140) {
-      alert("Error: Tweet content is not present.")
-    } else if (remainingChar < -1) {
-      alert("Error: Tweet content is too long.")
+
+    if ($(".tweetBox").val().length === 0) {
+      alert("Error: Tweet content is not present.");
+    } else if ($(".tweetBox").val().length > 140) {
+      alert("Error: Tweet content is too long.");
     } else {
       $.post('/tweets', $(this).serialize(), (data, status) => {
-      })
+        $(".tweetBox").val("");
+        loadTweets();
+      });
     }
 
-
-    console.log($(this).serialize());
   });
 
-  // const tweetData = [
+  
+  const renderTweets = function(tweets) {
+    $("#tweets-container").empty();
+      
+    for(let tweet of tweets) {
+      const $article = createTweetElement(tweet);
+      $("#tweets-container").append($article);
+    };
+  };
+
+  const loadTweets = function() {
+    $.get('/tweets', function(data) {
+      renderTweets(data);
+    })
+  };
+  
+  loadTweets();
+  
+});
+
+
+
+// const tweetData = [
   //   {
   //     "user": {
   //       "name": "Newton",
@@ -84,21 +108,3 @@ $(() => {
   //     "created_at": 1461113959088
   //   }
   // ]
-  
-  const renderTweets = function(tweets) {
-    for (let tweet of tweets) {
-      const $article = createTweetElement(tweet);
-      $("#tweets-container").append($article);
-    }
-  };
-
-  const loadTweets = function() {
-    $.get('/tweets', function(data) {
-      renderTweets(data);
-    })
-  }
-
-  loadTweets();
-
-
-});
