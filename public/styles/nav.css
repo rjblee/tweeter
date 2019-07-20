@@ -9,6 +9,7 @@ nav {
   background: #4056A1;
   z-index: 1000;
 }
+
 nav div{
   text-align: center;
 }
@@ -37,3 +38,4 @@ nav h3 b {
   position: relative;
   top: 5px;
 }
+

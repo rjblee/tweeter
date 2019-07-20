@@ -1,10 +1,13 @@
-header {
+.mainHeader {
   position: relative;
   height: 400px;
-  width: 100%;
   background-color: rgb(197, 197, 212);
   background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
-  margin-top: 120px;
+
+  float: left;
+  width: 27.3%;
+  margin-top: 180px;
+  margin-left: 60px;
 }
 
 .avatar img {
@@ -27,4 +30,18 @@ header {
 
 header h2 b {
   font-weight: lighter;  
+}
+
+@media only screen and (max-width: 1023px) {
+  .mainHeader {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 120px;
+  }
+
+  .logo {
+    background: rgb(197, 197, 212);
+    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+  }
 }

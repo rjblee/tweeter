@@ -26,15 +26,30 @@ body {
  */
 
  .container {
-   margin-top: 60px;
+  float: right;
+  width: 60.7%;
+  margin-top: 180px;
+  margin-right: 40px;
  }  
 
  main {
    color: black;
    background-color: #f4f1ec;
-   /* background-color: goldenrod; */
    width: 90%;
    left: 0;
    right: 0;
    margin: auto;
  }
+
+ /* Tablet: minimum width of 768px to maximum width of 1024px */
+@media only screen and (max-width: 1023px) {
+
+  .container {
+    width: auto;
+    float: none;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+}
+
+
