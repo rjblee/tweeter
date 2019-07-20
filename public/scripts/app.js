@@ -14,7 +14,7 @@ $(() => {
     const $span1 = $("<span>").text(obj.user.name);
     $div1.append($span1);
 
-    const $span2 = $("<span>").addClass("username").text(obj.user.handle)
+    const $span2 = $("<span>").addClass("username").text(obj.user.handle);
     $header.append($span2);
 
     const $p1 = $("<p>").addClass("tweetText").text(obj.content.text);
@@ -26,22 +26,21 @@ $(() => {
     const $hr = $("<hr>");
     $footer.append($hr);
 
-    const $p2 = $("<p>").text(obj.created_at);
+    const $p2 = $("<p>").text(moment(obj.created_at).fromNow());
     $footer.append($p2);
 
     const $div2 = $("<div>").addClass("icons");
     $footer.append($div2);
 
-    const $img2 = $("<img>");
+    const $img2 = $("<img>").attr('src', "https://img.icons8.com/material-rounded/24/000000/flag.png");
     $div2.append($img2);
 
-    const $img3 = $("<img>");
+    const $img3 = $("<img>").attr('src', "https://img.icons8.com/material/24/000000/retweet.png");
     $div2.append($img3);
 
-    const $img4 = $("<img>");
+    const $img4 = $("<img>").attr('src', "https://img.icons8.com/material-sharp/24/000000/filled-like.png");
     $div2.append($img4);
 
-  
     return $article;
   };
 
@@ -53,11 +52,11 @@ $(() => {
     $("#errorMessage").hide();
 
     if ($(".tweetBox").val().length === 0) {
-      $("#errorMessage").html("Error: Tweet content is not present")
+      $("#errorMessage").html("Error: Tweet content is not present");
       $("#errorMessage").slideDown("slow");
 
     } else if ($(".tweetBox").val().length > 140) {
-      $("#errorMessage").html("Error: Tweet content is too long")
+      $("#errorMessage").html("Error: Tweet content is too long");
       $("#errorMessage").slideDown("slow");
 
     } else {
@@ -69,52 +68,25 @@ $(() => {
 
   });
 
-  
   const renderTweets = function(tweets) {
     $("#tweets-container").empty();
       
-    for(let tweet of tweets) {
+    for (let tweet of tweets) {
       const $article = createTweetElement(tweet);
-      $("#tweets-container").append($article);
-    };
+      $("#tweets-container").prepend($article);
+    }
   };
 
   const loadTweets = function() {
     $.get('/tweets', function(data) {
       renderTweets(data);
-    })
+    });
   };
   
   loadTweets();
   
   $('#arrowDown').click(function() {
     $('#tweetButton').slideToggle();
+    $("#errorMessage").hide();
   });
 });
-
-
-
-// const tweetData = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png",
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd" 
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ]
