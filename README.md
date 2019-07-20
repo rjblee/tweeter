@@ -15,3 +15,13 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot description"](https://github.com/rjblee/tweeter/blob/master/docs/tweet-home.png?raw=true)
+
+
+!["Screenshot description"](https://github.com/rjblee/tweeter/blob/master/docs/tweet-posting.png?raw=true)
+
+
+!["Screenshot description"](https://github.com/rjblee/tweeter/blob/master/docs/tweet-feed.png?raw=true)
