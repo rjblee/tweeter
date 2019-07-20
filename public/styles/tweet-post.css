@@ -3,8 +3,14 @@
 }
 
 .username {
+  color: rgb(197, 197, 212);
+  opacity: 0;
   float: right;
   vertical-align: bottom;
+}
+
+.tweetPost:hover .username {
+  opacity: 1;
 }
 
 .avatarAndName {
@@ -40,4 +46,15 @@ article {
 
 .tweetPost:hover {
   box-shadow: 10px 10px rgb(197, 197, 212);
+}
+
+ /* Tablet: maximum width of 1023px and desktop (default) width from 1024px */
+@media only screen and (max-width: 1023px) {
+  article {
+    margin: 30px 30px 0 30px;
+  } 
+
+  #tweetButton {
+    margin: 30px;
+  }
 }

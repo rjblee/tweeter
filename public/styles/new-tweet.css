@@ -3,10 +3,15 @@
   float: right;
 }
 
+.redCounter {
+  color: red;
+}
+
 input[type="submit"] {
   background: #4056A1;
   color: #fff;
   font-family: 'Bungee', cursive;
+  margin-bottom: 50px;
 }
 
 .tweetBox {
@@ -14,7 +19,6 @@ input[type="submit"] {
   left: 0;
   right: 0;
   margin: auto;
-  /* margin-left: 50px; */
   background: transparent;
   border-color: transparent;
   border-bottom: solid;
@@ -23,3 +27,6 @@ input[type="submit"] {
   height: 40px;
 }
 
+#tweetButton {
+  display: none;
+}

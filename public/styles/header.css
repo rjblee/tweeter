@@ -3,7 +3,6 @@
   height: 400px;
   background-color: rgb(197, 197, 212);
   background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
-
   float: left;
   width: 27.3%;
   margin-top: 180px;
@@ -37,11 +36,12 @@ header h2 b {
     float: none;
     width: 100%;
     margin-left: 0;
-    margin-top: 120px;
+    margin-top: 0;
+    height: 520px;
   }
 
   .logo {
     background: rgb(197, 197, 212);
-    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+    background-color: transparent;
   }
 }
